@@ -2,6 +2,36 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	<bean id="personService" class="com.spring.database.PersonServiceImpl"></bean>
-
+	<bean id="personService" class="com.spring.database.PersonServiceImpl">
+		<property name="persons">
+			<map>
+				<entry>
+					<key><value>triman</value></key>					
+					<ref bean="triman"/>
+				</entry>
+				<entry>
+					<key><value>madhav</value></key>					
+					<ref bean="madhav"/>
+				</entry>
+				<entry>
+					<key><value>vikas</value></key>
+					<ref bean="vikas"/>
+				</entry>
+			</map>
+		</property>
+		
+	</bean>
+	<bean id="triman" class="com.spring.database.Person">
+		<property name="name" value="triman"/>
+		<property name="age" value="7"/>
+	</bean>
+	<bean id="madhav" class="com.spring.database.Person">
+		<property name="name" value="Shoeb"/>
+		<property name="age" value="29"/>
+	</bean>
+	
+	<bean id="vikas" class="com.spring.database.Person">
+		<property name="name" value="vikas"/>
+		<property name="age" value="34"/>
+	</bean>
 </beans>

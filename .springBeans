@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/main/java/Beans.xml</config>
 		<config>src/main/java/PersonBeans.xml</config>
+		<config>src/main/java/com/spring/database/vehicle/VehicleBeans.xml</config>
 	</configs>
 	<configSets>
 	</configSets>

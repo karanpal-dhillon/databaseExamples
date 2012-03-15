@@ -16,6 +16,9 @@ public class MainApp {
 		System.out.println("Name: - "+per.getName());
 		System.out.println("Name: - "+per.getAge());
 
+		for(Person p:personService.getAll()){
+			System.out.println("Person Name:- "+p.getName()+", Age "+p.getAge());
+		}
 	}
 
 }

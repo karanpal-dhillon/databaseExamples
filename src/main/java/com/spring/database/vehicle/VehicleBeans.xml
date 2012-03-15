@@ -5,9 +5,14 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 		
-	<context:component-scan base-package="com.spring.database"/>
-	<context:annotation-config/>
+	<context:property-placeholder location="classpath:jdbc.properties"/>
 	
-	<import resource="PersonBeans.xml"/>
-	<import resource="com\spring\database\vehicle\VehicleBeans.xml"/>
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${jdbc.driverClass}"/>
+		<property name="url" value="${jdbc.url}"/>
+		<property name="username" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password"/>
+		<property name="maxActive" value="${jdbc.maxConnections}"/>		
+	</bean>
+
 </beans>
